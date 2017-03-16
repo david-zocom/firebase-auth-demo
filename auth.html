@@ -41,7 +41,16 @@
 	<script type="text/javascript">
 		// För att garantera att inga DOM-element är null
 		window.addEventListener('load', function() {
-		
+			var provider = new firebase.auth.GithubAuthProvider();
+			console.log('före autentisering');
+			
+			firebase.auth().signInWithPopup(provider)
+			.then(function(result) {
+				console.log('Autentisering lyckades');
+			})
+			.catch(function(error) {
+				console.log('Autentisering misslyckades');
+			})
 		});
 	</script>
 </body>
