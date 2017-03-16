@@ -46,7 +46,7 @@
 			
 			firebase.auth().signInWithPopup(provider)
 			.then(function(result) {
-				console.log('Autentisering lyckades');
+				console.log('Autentisering lyckades: ', result);
 			})
 			.catch(function(error) {
 				console.log('Autentisering misslyckades: ', error);
